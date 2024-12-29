@@ -13,6 +13,8 @@ import Chatbot from './authpages/Chatbot'
 import Writer from './authpages/Writer'
 import Compiler from './authpages/Compiler'
 import './tailwind.css'
+import axios from 'axios';
+
 
 // PrivateRoute component for protected routes
 function PrivateRoute({ children, isAuthenticated }) {
