@@ -20,7 +20,7 @@ function ContentWriterPage() {
   const handleSubmit = async () => {
     try {
       console.log("Submitting prompt:", prompt); // Debug log
-      const response = await fetch("http://192.168.1.6:5001/generate-content", {
+      const response = await fetch("http://192.168.29.26:5001/generate-content", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
@@ -28,7 +28,7 @@ function ContentWriterPage() {
       const data = await response.json();
       console.log("Received data:", data); // Debug log
       setContent(data.content); // Update the editor with the generated content
-      const hashtagsResponse = await fetch("http://192.168.1.6:5001/generate-hashtags", {
+      const hashtagsResponse = await fetch("http://192.168.29.26:5001/generate-hashtags", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
@@ -45,7 +45,7 @@ function ContentWriterPage() {
     try {
       console.log("Ask AI prompt:", askAIPrompt); // Debug log
       console.log("Current content:", content); // Debug log
-      const response = await fetch("http://192.168.1.6:5001/askai", {
+      const response = await fetch("http://192.168.29.26:5001/askai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
